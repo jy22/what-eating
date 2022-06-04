@@ -1,0 +1,21 @@
+server:
+  shutdown: graceful
+  port: 8080
+
+spring:
+  profiles:
+    active: ${whateating.api.profile:beta}
+  main:
+    allow-bean-definition-overriding: true
+  devtools:
+    restart:
+      enabled: false
+
+whateating:
+  api:
+    version: v1
+
+logging:
+  level:
+    root: ${whateating.api.logging.level.root:info}
+
