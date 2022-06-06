@@ -11,6 +11,21 @@ spring:
     restart:
       enabled: false
 
+r2dbc:
+  pool:
+    max-idle-time: 20
+    max-create-connection-time: 30
+    max-life: 60
+    initial-size: 20
+    max-size: 30
+    tls-version: TLSv1.2
+  datasource:
+    host: localhost
+    port: 3306
+    db: eating
+    username: root
+    password: 1234
+
 whateating:
   api:
     version: v1

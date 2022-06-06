@@ -15,11 +15,11 @@ class AuthController(
 ) {
     @PostMapping("/auth/sign-in")
     @ResponseStatus(HttpStatus.OK)
-    suspend fun signIn(@RequestBody request: SignInRequest): SingleResponse<AuthResponse>? =
+    suspend fun signIn(@RequestBody request: SignInRequest): SingleResponse<String>? =
         SingleResponse(data = authService.signIn(request))
 
     @PostMapping("/auth/sign-up")
     @ResponseStatus(HttpStatus.OK)
-    suspend fun signUp(@RequestBody request: SignUpRequest): SingleResponse<String>? =
+    suspend fun signUp(@RequestBody request: SignUpRequest): SingleResponse<AuthResponse>? =
         SingleResponse(data = authService.signUp(request))
 }

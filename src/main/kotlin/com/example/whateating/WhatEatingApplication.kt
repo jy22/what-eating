@@ -1,14 +1,13 @@
 package com.example.whateating
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.autoconfigure.r2dbc.R2dbcAutoConfiguration
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.ComponentScan
 
-@ConfigurationPropertiesScan("com.example.whateating.config.*")
+@ConfigurationPropertiesScan("com.example.whateating.config.r2dbc.properties")
 @ComponentScan(basePackages = ["com.example.whateating.*"])
-@SpringBootApplication(exclude = [R2dbcAutoConfiguration::class])
+@SpringBootApplication
 class WhatEatingApplication
 
 fun main(args: Array<String>) {
